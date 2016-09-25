@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Password Manager</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <canvas id="granim-canvas"></canvas>
+
+        <main>
+            <input type="password" id="main-pass" placeholder="Password">
+            <input type="text" id="account" placeholder="Account">
+
+            <section>
+                <input type="checkbox" id="keep-short">
+                <label for="keep-short">Keep it short</label>
+            </section>
+
+            <section class="commands">
+                <button
+                    type="button" id="copy"
+                    data-clipboard-action="copy"
+                    data-clipboard-target="#result"
+                >
+                    Copy To Clipboard
+                </button>
+            </section>
+
+            <div id="reset-timer"></div>
+            <div id="result"></div>
+        </main>
+
+        <script src="vendor.js"></script>
+        <script src="main.js"></script>
+
+        <script>
+            let granimInstance = new Granim({
+               element: '#granim-canvas',
+               name: 'granim',
+               opacity: [1, 1],
+               states : {
+                   "default-state": {
+                       gradients: [
+                           ['#834D9B', '#D04ED6'],
+                           ['#1CD8D2', '#93EDC7']
+                       ]
+                   }
+               }
+            });
+
+            new Clipboard('#copy')
+        </script>
+    </body>
+</html>
