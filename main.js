@@ -12,7 +12,7 @@ let generationCallback = () => {
     resultDiv.innerText = generatePassword(passwordInput.value, accountInput.value, keepShortCheckbox.checked)
     resetTimerProgressBar.set(1)
     resetTimerProgressBar.animate(0)
-    resetTimer = setTimeout(reset, 10000)
+    resetTimer = setTimeout(reset, 30000)
 }
 
 passwordInput.addEventListener('keyup', generationCallback)
@@ -46,7 +46,7 @@ function reset() {
 // Reset timer progress bar
 let resetTimerProgressBar = new ProgressBar.Line('#reset-timer', {
     strokeWidth: 2,
-    duration: 10000,
+    duration: 30000,
     color: '#fff',
     trailColor: 'rgba(0,0,0,0)',
     //trailColor: '#bbb',
